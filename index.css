@@ -1,0 +1,266 @@
+body {
+    background-color: black;
+    font-family: Vazir,sans-serif;
+    width: 100%;
+    margin: 0%;
+    height: 10vh ;
+    display: flex;
+    overflow: hidden;
+    justify-content: center;
+}
+
+h1 {
+    color: #fff;
+    right: 11em;
+    position: relative;
+    font-family: sans-serif;
+    transition: transform 0.3s ease-in-out;
+    transform: center;
+}
+
+h1:hover {
+    transform: scale(1.05)
+    translatex(10px);
+}
+
+p {
+    color: antiquewhite;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif,sans-serif;
+    top: 3em ;
+    right: 30em;
+    position: relative;
+    transition: transform 0.3s ease-in-out;
+    transform: center center;
+
+}
+
+p:hover {
+    transform: scale(1.05)
+    translateX(5px);
+}
+
+.flex-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 20px;
+    position: relative;
+    border-radius: 50px;
+    right: 20em;
+    top: 10em;
+    border-radius: 10px;
+    
+}
+
+.flex-item {
+    overflow-y: auto;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    font-family: sans-serif;
+    max-height: 300px;
+    width: 300px;
+    position: fixed;
+    margin-top: -6em;
+    margin-right: 15em;
+    color: #fff;
+    border-radius: 15px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    line-height: 1.8;
+    word-wrap: break-word;
+    white-space: pre-line;
+    box-shadow: 0 0 10px #13f1f1 ;
+    font-size: small;
+    transition: transform 0.3s ease ;
+    transform-origin: center center;
+}
+
+.flex-item:hover{
+    transform: scale(1.05);
+}
+
+.container {
+    font-size: 10px;
+    width: 40em;
+    height: 40em;
+    position: relative;
+
+}
+
+
+.son {
+    position: absolute;
+    top: 15em;
+    left: 15em;
+    width: 10em;
+    height: 10em;
+    background-color: yellow;
+    border-radius: 50%;
+    box-shadow: 0 0 10em #fff;
+    margin-top: 100px;
+}
+
+.earth,.moon,.murce{
+    position: absolute;
+    border-style: solid;
+    margin-top: 100px;
+    border-color: #5b76ee transparent transparent transparent;
+    border-width: 0.1em 0.1em 0 0;
+    border-radius: 50%;
+}
+
+.earth {
+    top: 5em;
+    left: 5em;
+    width: 30em;
+    height: 30em;
+    animation: orbit 36.5s linear infinite;
+
+}
+
+.moon {
+    top: 0;
+    left: 0;
+    width: 8em;
+    height: 8em;
+    margin-top: 2px;
+    margin-right: 30px;
+    animation: orbit 2.7s linear infinite;
+}
+
+.murce {
+    top: 1em;
+    left: 0em; 
+    width: 50em; 
+    height: 50em;
+    margin-top: 3em;
+    margin-left: -5.5em;
+    animation: orbit 68.7s linear infinite ;
+}
+
+.earth::before,
+.moon::before,.murce::before {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+
+}
+
+.earth::before{
+    top: 2.8em;
+    left: 2.8em;
+    width: 3em;
+    height: 3em;
+    box-shadow: inset -10px -10px 20px rgba(0, 0, 0, 0.2);
+    background : radial-gradient(circle at 40% 40% , #1f75fe 60%, #228B22 30%,#1f75fe 100%);
+
+}
+
+.moon::before {
+    top: 0%;
+    left: 1.2em;
+    width: 1.2em;
+    height: 1.2em;
+    box-shadow: 0 0 4px #fff;
+    background-color: #c0c0c0;
+}
+
+.murce::before {
+    top: 10em;
+    left: 3.2em;
+    width: 2em;
+    height: 2em;
+    box-shadow: 0 0 10px #b22222;
+    background-color: chocolate;
+}
+
+@keyframes orbit {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.login-box {
+    position: absolute;
+    top: 28em;
+    left: 13%;
+    width: 400px;
+    padding: 40px;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.5);
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px rgba(0,0,0,.6);
+    border-radius: 10px;
+  }
+  
+  .login-box h2 {
+    margin: 0 0 30px;
+    padding: 0;
+    color: #fff;
+    text-align: center;
+  }
+  
+  .login-box .user-box {
+    position: relative;
+  }
+  
+  .login-box .user-box input {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #fff;
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 1px solid #fff;
+    outline: none;
+    background: transparent;
+  }
+  .login-box .user-box label {
+    position: absolute;
+    top:0;
+    left: 0;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #fff;
+    pointer-events: none;
+    transition: .5s;
+  }
+  
+  .login-box .user-box input:focus ~ label,
+  .login-box .user-box input:valid ~ label {
+    top: -20px;
+    left: 0;
+    color: #03e9f4;
+    font-size: 12px;
+  }
+  
+  .login-box form a {
+    position: relative;
+    display: inline-block;
+    padding: 10px 20px;
+    color: #03e9f4;
+    font-size: 16px;
+    text-decoration: none;
+    text-transform: uppercase;
+    overflow: hidden;
+    transition: .5s;
+    margin-top: 40px;
+    letter-spacing: 4px
+  }
+  
+  .btn {
+    box-sizing: border-box;
+    width: 50%;
+    height: 30px;
+    margin-left : 25%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+    background-color: cornsilk;
+    border-radius: 10px;
+    transition: background-color 0.3s ease-in-out;
+  }
+
+  .btn:hover {
+    background-color: #c0c0c0;
+  }
